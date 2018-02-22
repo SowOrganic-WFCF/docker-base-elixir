@@ -1,8 +1,8 @@
 FROM bitwalker/alpine-elixir:1.6.1
 
-ENV REFRESHED_AT=2018-02-05
-
-LABEL maintainer="trond@omt.tech"
+ENV REFRESHED_AT=2018-02-21 
+ 
+LABEL maintainer="brandon@uptrend.tech"
 
 # Install Node and NPM
 # edge/testing is added for aws-cli and wkhtmltopdf
