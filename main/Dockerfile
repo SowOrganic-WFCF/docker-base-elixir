@@ -5,7 +5,6 @@ ENV REFRESHED_AT=2018-02-21
 LABEL maintainer="brandon@uptrend.tech"
 
 # Install Node and NPM
-# edge/testing is added for aws-cli and wkhtmltopdf
 # make and g++ is for compilation of native modules for Elixir (and possibly node)
 # grep is added because Ranch doesn't like alpine's grep -E
 # bash is added because Distillery requires it
