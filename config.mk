@@ -1,3 +1,3 @@
-REPO=omttech
+REPO=uptrend
 IMAGE=base-docker-dev
-VERSION=0.7.0
+VERSION=0.7.1
