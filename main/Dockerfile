@@ -10,11 +10,9 @@ LABEL maintainer="trond@omt.tech"
 # grep is added because Ranch doesn't like alpine's grep -E
 # bash is added because Distillery requires it
 # inotify-tools is added for live reload
-# wkhtmltopdf is used by several of our projects
 RUN \
   mkdir -p /app && \
   chown -R default:0 /app && \
-  echo "@edgetesting http://nl.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories && \
   apk --no-cache --update --purge upgrade && \
   apk --no-cache --update add \
     git \
@@ -25,10 +23,17 @@ RUN \
     nodejs \
     yarn \
     inotify-tools \
-    wkhtmltopdf@edgetesting \
   && \
   update-ca-certificates --fresh && \
   rm -rf /var/cache/apk/*
+
+# Install wkhtmltopdf
+# copies static binary from docker image and install it's dependencys
+COPY --from=surnet/alpine-wkhtmltopdf:3.7-0.12.4-small /bin/wkhtmltopdf /bin/
+RUN apk add --update --no-cache \
+    libgcc libstdc++ libx11 glib libxrender libxext libintl \
+    libcrypto1.0 libssl1.0 \
+    ttf-dejavu ttf-droid ttf-freefont ttf-liberation ttf-ubuntu-font-family
 
 RUN \
   mix local.hex --force && \
