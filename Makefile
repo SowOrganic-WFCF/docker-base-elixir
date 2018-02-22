@@ -47,11 +47,11 @@ git-base:
 	git push origin ${VERSION}
 
 git-dev:
-	git add -A ci
-	git commit -m "Docker image version ${DESTINATION}:ci-${VERSION}"
-	git tag ci-${VERSION}
+	git add -A dev
+	git commit -m "Docker image version ${DESTINATION}:dev-${VERSION}"
+	git tag dev-${VERSION}
 	git push
-	git push origin ci-${VERSION}
+	git push origin dev-${VERSION}
 
 git-ci:
 	git add -A ci
