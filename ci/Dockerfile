@@ -1,8 +1,8 @@
-FROM omttech/base-docker-dev:0.7.0
+FROM uptrend/base-docker-dev:0.7.1
 
-ENV REFRESHED_AT=2018-02-05
-
-LABEL maintainer="trond@omt.tech"
+ENV REFRESHED_AT=2018-02-21 
+ 
+LABEL maintainer="brandon@uptrend.tech"
 
 # Install dependencies required for CircleCI
 # CircleCI 2.0: Requires ssh binary. Docker is to build images and deployment
