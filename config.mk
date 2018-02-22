@@ -1,3 +1,3 @@
 REPO=uptrend
-IMAGE=base-docker-dev
-VERSION=0.7.1
+IMAGE=base-elixir
+VERSION=1.0.0

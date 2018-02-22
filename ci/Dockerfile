@@ -1,4 +1,4 @@
-FROM uptrend/base-docker-dev:0.7.1
+FROM uptrend/base-elixir:dev-1.0.0
 
 ENV REFRESHED_AT=2018-02-21 
  

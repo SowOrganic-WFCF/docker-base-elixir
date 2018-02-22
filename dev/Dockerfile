@@ -1,4 +1,4 @@
-FROM bitwalker/alpine-elixir:1.6.1
+FROM uptrend/base-elixir:1.0.0
 
 ENV REFRESHED_AT=2018-02-21 
  
@@ -18,21 +18,12 @@ RUN \
     make \
     g++ \
     grep \
-    bash \
     nodejs \
     yarn \
     inotify-tools \
   && \
   update-ca-certificates --fresh && \
   rm -rf /var/cache/apk/*
-
-# Install wkhtmltopdf
-# copies static binary from docker image and install it's dependencys
-COPY --from=surnet/alpine-wkhtmltopdf:3.7-0.12.4-small /bin/wkhtmltopdf /bin/
-RUN apk add --update --no-cache \
-    libgcc libstdc++ libx11 glib libxrender libxext libintl \
-    libcrypto1.0 libssl1.0 \
-    ttf-dejavu ttf-droid ttf-freefont ttf-liberation ttf-ubuntu-font-family
 
 RUN \
   mix local.hex --force && \
