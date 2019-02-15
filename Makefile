@@ -17,6 +17,7 @@ build: build-base build-dev build-ci
 
 build-base:
 	docker build -t ${DESTINATION}:latest base
+	docker tag ${DESTINATION}:latest ${DESTINATION}:${VERSION}
 
 build-dev:
 	docker build -t ${DESTINATION}:dev-${VERSION} dev
@@ -27,7 +28,6 @@ build-ci:
 push: push-base push-dev push-ci
 
 push-base:
-	docker tag ${DESTINATION}:latest ${DESTINATION}:${VERSION}
 	docker push ${DESTINATION}:latest
 	docker push ${DESTINATION}:${VERSION}
 

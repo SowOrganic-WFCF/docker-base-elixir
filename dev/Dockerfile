@@ -1,7 +1,7 @@
-FROM uptrend/base-elixir:1.0.0
+FROM uptrend/base-elixir:1.1.0
 
-ENV REFRESHED_AT=2018-02-21 
- 
+ENV REFRESHED_AT=2019-02-18
+
 LABEL maintainer="brandon@uptrend.tech"
 
 # Install Node and NPM
