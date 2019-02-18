@@ -1,11 +1,13 @@
-FROM bitwalker/alpine-elixir:1.6.1
+FROM bitwalker/alpine-elixir:1.8.0
 
-ENV REFRESHED_AT=2018-02-21 
- 
+ENV REFRESHED_AT=2019-02-18
+
 LABEL maintainer="brandon@uptrend.tech"
 
+RUN apk --no-cache add  libcrypto1.0 libssl1.0
+
 RUN \
-  sed -i 's/v3.6/v3.7/g' /etc/apk/repositories && \
+  sed -i 's/v3.8/v3.9/g' /etc/apk/repositories && \
   echo "@edgetesting http://nl.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories && \
   apk upgrade && \
   apk --no-cache add \
@@ -20,5 +22,5 @@ RUN \
 COPY --from=surnet/alpine-wkhtmltopdf:3.7-0.12.4-small /bin/wkhtmltopdf /bin/
 RUN apk add --update --no-cache \
     libgcc libstdc++ libx11 glib libxrender libxext libintl \
-    libcrypto1.0 libssl1.0 \
+    # libcrypto1.1 libssl1.1 \
     ttf-dejavu ttf-droid ttf-freefont ttf-liberation ttf-ubuntu-font-family
