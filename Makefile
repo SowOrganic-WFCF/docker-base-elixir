@@ -2,16 +2,20 @@ include config.mk
 
 DESTINATION=${REPO}/${IMAGE}
 
-all: opt build push git
-base: opt build-base push-base git-base
-dev: opt build-dev push-dev git-dev
-ci: opt build-ci push-ci git-ci
+.DEFAULT_GOAL := default
+
+default: build
 
 opt:
 	@echo "build options:"
 	@echo "  REPO    = ${REPO}"
 	@echo "  IMAGE   = ${IMAGE}"
 	@echo "  VERSION = ${VERSION}"
+
+all: opt build push git
+base: opt build-base push-base git-base
+dev: opt build-dev push-dev git-dev
+ci: opt build-ci push-ci git-ci
 
 build: build-base build-dev build-ci
 

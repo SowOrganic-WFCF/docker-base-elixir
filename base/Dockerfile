@@ -1,6 +1,6 @@
 FROM bitwalker/alpine-elixir:1.8.0
 
-ENV REFRESHED_AT=2019-02-18
+ENV REFRESHED_AT=2019-04-17
 
 LABEL maintainer="brandon@uptrend.tech"
 
@@ -8,14 +8,16 @@ RUN apk --no-cache add  libcrypto1.0 libssl1.0
 
 RUN \
   sed -i 's/v3.8/v3.9/g' /etc/apk/repositories && \
-  echo "@edgetesting http://nl.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories && \
+  # Add pinned repos for access to newer packages. More info: https://bit.ly/2PfS8K0
+  echo "@edge http://nl.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositories && \
+  echo "@edgecommunity http://nl.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories && \
   apk upgrade && \
   apk --no-cache add \
-  # Distillery needs bash now
-  bash \
-  # Used to fetch EC2 instance IP before launch. Busybox provides wget, but
-  # it requires openssl, which is a bigger install
-  curl
+    # Distillery needs bash now
+    bash \
+    # Used to fetch EC2 instance IP before launch. Busybox provides wget, but
+    # it requires openssl, which is a bigger install
+    curl
 
 # Install wkhtmltopdf
 # copies static binary from docker image and install it's dependencys
