@@ -1,6 +1,6 @@
-FROM uptrend/base-elixir:1.2.0
+FROM uptrend/base-elixir:1.3.0
 
-ENV REFRESHED_AT=2019-04-17
+ENV REFRESHED_AT=2020-02-11
 
 LABEL maintainer="brandon@uptrend.tech"
 

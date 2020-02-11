@@ -1,10 +1,10 @@
-FROM bitwalker/alpine-elixir:1.8.0
+FROM hexpm/elixir:1.10.1-erlang-22.2.6-alpine-3.11.3
 
-ENV REFRESHED_AT=2019-04-17
+ENV REFRESHED_AT=2020-02-11
 
 LABEL maintainer="brandon@uptrend.tech"
 
-RUN apk --no-cache add  libcrypto1.0 libssl1.0
+RUN apk --no-cache add  libcrypto1.1 libssl1.1
 
 RUN \
   sed -i 's/v3.8/v3.9/g' /etc/apk/repositories && \
