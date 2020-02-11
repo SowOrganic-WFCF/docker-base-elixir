@@ -4,6 +4,10 @@ ENV REFRESHED_AT=2020-02-11
 
 LABEL maintainer="brandon@uptrend.tech"
 
+RUN \
+  addgroup -S appgroup && \
+  adduser --system appuser --ingroup appgroup
+
 RUN apk --no-cache add  libcrypto1.1 libssl1.1
 
 RUN \

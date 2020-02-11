@@ -11,7 +11,7 @@ LABEL maintainer="brandon@uptrend.tech"
 # inotify-tools is added for live reload
 RUN \
   mkdir -p /app && \
-  chown -R default:0 /app && \
+  chown -R appuser:appgroup /app && \
   apk --no-cache --update --purge upgrade && \
   apk --no-cache --update add \
     git \
