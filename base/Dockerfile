@@ -11,7 +11,6 @@ RUN \
 RUN apk --no-cache add  libcrypto1.1 libssl1.1
 
 RUN \
-  sed -i 's/v3.8/v3.9/g' /etc/apk/repositories && \
   # Add pinned repos for access to newer packages. More info: https://bit.ly/2PfS8K0
   echo "@edge http://nl.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositories && \
   echo "@edgecommunity http://nl.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories && \

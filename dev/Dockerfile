@@ -18,7 +18,7 @@ RUN \
     make \
     g++ \
     grep \
-    nodejs@edge \
+    nodejs \
     yarn@edgecommunity \
     inotify-tools \
   && \
