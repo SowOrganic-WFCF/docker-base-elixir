@@ -1,13 +1,16 @@
-FROM bitwalker/alpine-elixir:1.8.0
+FROM hexpm/elixir:1.10.1-erlang-22.2.6-alpine-3.11.3
 
-ENV REFRESHED_AT=2019-04-17
+ENV REFRESHED_AT=2020-02-11
 
 LABEL maintainer="brandon@uptrend.tech"
 
-RUN apk --no-cache add  libcrypto1.0 libssl1.0
+RUN \
+  addgroup -S appgroup && \
+  adduser --system appuser --ingroup appgroup
+
+RUN apk --no-cache add  libcrypto1.1 libssl1.1
 
 RUN \
-  sed -i 's/v3.8/v3.9/g' /etc/apk/repositories && \
   # Add pinned repos for access to newer packages. More info: https://bit.ly/2PfS8K0
   echo "@edge http://nl.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositories && \
   echo "@edgecommunity http://nl.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories && \

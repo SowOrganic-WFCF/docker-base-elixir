@@ -1,6 +1,6 @@
-FROM uptrend/base-elixir:1.2.0
+FROM uptrend/base-elixir:1.3.0
 
-ENV REFRESHED_AT=2019-04-17
+ENV REFRESHED_AT=2020-02-11
 
 LABEL maintainer="brandon@uptrend.tech"
 
@@ -11,14 +11,14 @@ LABEL maintainer="brandon@uptrend.tech"
 # inotify-tools is added for live reload
 RUN \
   mkdir -p /app && \
-  chown -R default:0 /app && \
+  chown -R appuser:appgroup /app && \
   apk --no-cache --update --purge upgrade && \
   apk --no-cache --update add \
     git \
     make \
     g++ \
     grep \
-    nodejs@edge \
+    nodejs \
     yarn@edgecommunity \
     inotify-tools \
   && \
