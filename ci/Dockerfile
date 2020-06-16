@@ -1,8 +1,8 @@
-FROM uptrend/base-elixir:dev-1.4.0
+FROM soworganicwfcf/base-elixir:dev-1.0.0
 
-ENV REFRESHED_AT=2020-03-19
+ENV REFRESHED_AT=2020-06-15
 
-LABEL maintainer="brandon@uptrend.tech"
+LABEL maintainer="jason.grey@warecorp.com"
 
 # Install dependencies required for CircleCI
 # CircleCI 2.0: Requires ssh binary. Docker is to build images and deployment
