@@ -1,3 +1,3 @@
-REPO=uptrend
+REPO=SowOrganic-WFCF
 IMAGE=base-elixir
-VERSION=1.4.0
+VERSION=1.0.0

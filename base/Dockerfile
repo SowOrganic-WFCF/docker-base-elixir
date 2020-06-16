@@ -1,8 +1,8 @@
-FROM hexpm/elixir:1.10.1-erlang-22.2.6-alpine-3.11.3
+FROM hexpm/elixir:1.9.4-erlang-22.3.4.1-alpine-3.11.6
 
-ENV REFRESHED_AT=2020-02-11
+ENV REFRESHED_AT=2020-06-15
 
-LABEL maintainer="brandon@uptrend.tech"
+LABEL maintainer="jason.grey@warecorp.com"
 
 RUN \
   addgroup -S appgroup && \

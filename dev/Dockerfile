@@ -1,8 +1,8 @@
-FROM uptrend/base-elixir:1.4.0
+FROM SowOrganic-WFCF/base-elixir:1.0.0
 
-ENV REFRESHED_AT=2020-03-19
+ENV REFRESHED_AT=2020-06-15
 
-LABEL maintainer="brandon@uptrend.tech"
+LABEL maintainer="jason.grey@warecorp.com"
 
 # Install Node and NPM
 # make and g++ is for compilation of native modules for Elixir (and possibly node)
