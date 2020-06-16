@@ -1,4 +1,4 @@
-FROM soworganicwfcf/base-elixir:1.0.0
+FROM soworganicwfcf/base-elixir:1.9.4
 
 ENV REFRESHED_AT=2020-06-15
 
