@@ -1,6 +1,5 @@
 ## Development Workflow
 
-
 ### Local Dev
 
 1. Create new branch off of `origin/master` to make your changes
