@@ -24,8 +24,7 @@ RUN \
 
 # Install wkhtmltopdf
 # copies static binary from docker image and install it's dependencys
-COPY --from=surnet/alpine-wkhtmltopdf:3.7-0.12.4-small /bin/wkhtmltopdf /bin/
+COPY --from=surnet/alpine-wkhtmltopdf:3.10-0.12.6-small /bin/wkhtmltopdf /bin/
 RUN apk add --update --no-cache \
     libgcc libstdc++ libx11 glib libxrender libxext libintl \
-    # libcrypto1.1 libssl1.1 \
     ttf-dejavu ttf-droid ttf-freefont ttf-liberation ttf-ubuntu-font-family
